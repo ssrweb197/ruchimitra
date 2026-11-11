@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://ruchimitra.pages.dev/sitemap.xml
