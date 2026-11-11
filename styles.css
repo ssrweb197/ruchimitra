@@ -8,3 +8,31 @@
 
 .menu-toggle{display:none;border:1px solid #d7dfd1;background:#fff;border-radius:10px;width:42px;height:40px;padding:9px;cursor:pointer;align-items:center;justify-content:center;flex-direction:column;gap:5px}.menu-toggle span{display:block;width:20px;height:2px;background:#315b37;border-radius:2px}.topbar nav{align-items:center}
 @media(max-width:640px){.topbar{gap:10px}.menu-toggle{display:flex;margin-left:auto}.topbar nav{display:none;position:absolute;top:66px;left:14px;right:14px;background:#fffefa;border:1px solid #e5e9df;border-radius:14px;padding:12px;box-shadow:0 12px 28px #263d2b20;flex-direction:column;align-items:stretch;gap:0}.topbar nav.open{display:flex}.topbar nav a{padding:13px 12px;border-radius:8px}.topbar nav a:hover{background:#edf3e9}.lang-btn{padding:8px 10px;white-space:nowrap}}
+
+/* Recipe cost calculator */
+.cost-section{padding:76px 7vw;background:#fffefa;display:grid;grid-template-columns:.8fr 1.2fr;gap:7vw;align-items:start}
+.cost-intro h2{font-size:clamp(29px,3.4vw,42px);letter-spacing:-1.5px;line-height:1.15;margin:10px 0}
+.cost-intro>p{color:var(--muted);font-size:14px;line-height:1.8}
+.cost-privacy{margin-top:22px;padding:12px 14px;background:#f0f5ec;border-radius:9px;color:#4c6948!important;font-size:11px!important}
+.cost-card{background:white;border:1px solid var(--line);border-radius:17px;padding:24px;box-shadow:0 12px 35px #283e250c}
+.cost-controls{display:grid;grid-template-columns:1fr 150px;gap:12px}
+.cost-controls label{display:block;font-size:11px;font-weight:800;color:#687465;margin-bottom:8px}
+.cost-controls select{width:100%;padding:12px;border:1px solid var(--line);border-radius:8px;background:white;font:13px inherit;color:var(--ink)}
+.cost-table-head{display:flex;justify-content:space-between;gap:12px;align-items:center;padding:22px 0 9px;font-size:11px;color:#788274}
+.cost-ingredient-row{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:10px 0;border-bottom:1px dashed #eeece5}
+.cost-ingredient-row b,.cost-ingredient-row small{display:block}
+.cost-ingredient-row b{font-size:12px;color:var(--ink)}
+.cost-ingredient-row small{font-size:10px;color:#8a9386;margin-top:4px}
+.cost-input-wrap{display:flex;align-items:center;gap:5px;border:1px solid var(--line);border-radius:8px;padding:0 9px;width:125px;flex:0 0 125px}
+.cost-input-wrap>span{font-size:12px;color:#6d7869}
+.cost-input-wrap input{border:0;outline:0;width:100%;min-width:0;padding:10px 0;font:12px "DM Sans",sans-serif;color:var(--green);text-align:right}
+.cost-result{margin-top:18px;padding:17px;background:#edf4e9;border-radius:11px}
+.cost-result span,.cost-result strong,.cost-result small{display:block}
+.cost-result span{font-size:11px;color:#63735d;font-weight:700}
+.cost-result strong{font-size:30px;color:#315b37;margin:5px 0}
+.cost-result small{font-size:11px;color:#63735d}
+.cost-actions{display:flex;justify-content:flex-end;margin-top:14px}
+.cost-actions .btn{font-size:11px}
+.feature-link{display:inline-block;margin-top:12px;color:#315b37;font-size:11px;font-weight:800}
+@media(max-width:900px){.cost-section{padding:60px 5vw;gap:30px}}
+@media(max-width:640px){.cost-section{grid-template-columns:1fr;padding:52px 19px;gap:20px}.cost-card{padding:16px}.cost-controls{grid-template-columns:1fr 120px}.cost-table-head{align-items:flex-start;flex-direction:column;gap:4px}.cost-input-wrap{width:112px;flex-basis:112px}.cost-ingredient-row b{font-size:11px}}
