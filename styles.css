@@ -36,3 +36,16 @@
 .feature-link{display:inline-block;margin-top:12px;color:#315b37;font-size:11px;font-weight:800}
 @media(max-width:900px){.cost-section{padding:60px 5vw;gap:30px}}
 @media(max-width:640px){.cost-section{grid-template-columns:1fr;padding:52px 19px;gap:20px}.cost-card{padding:16px}.cost-controls{grid-template-columns:1fr 120px}.cost-table-head{align-items:flex-start;flex-direction:column;gap:4px}.cost-input-wrap{width:112px;flex-basis:112px}.cost-ingredient-row b{font-size:11px}}
+
+/* Kitchen tips library */
+.kitchen-tips{padding:76px 7vw;background:#f5f6ef}
+.kitchen-tips .section-head{display:block;margin-bottom:30px}
+.tips-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.tip-card{background:#fffefa;border:1px solid #e8e9df;border-radius:15px;padding:22px}
+.tip-icon{font-size:25px}
+.tip-card h3{font-size:17px;margin:10px 0 12px;color:#2d4932}
+.tip-card ul{margin:0;padding-left:19px}
+.tip-card li{font-size:12px;line-height:1.75;color:#687366;margin:7px 0}
+.tips-note{max-width:900px;margin:20px auto 0;padding:13px 16px;border-radius:10px;background:#e8eddf;color:#64715e;font-size:11px;line-height:1.7}
+@media(max-width:900px){.kitchen-tips{padding:60px 5vw}}
+@media(max-width:640px){.kitchen-tips{padding:52px 19px}.tips-grid{grid-template-columns:1fr;gap:11px}.tip-card{padding:18px}.tip-card h3{font-size:15px}.tip-card li{font-size:11px}}
