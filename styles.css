@@ -5,3 +5,6 @@
 .recipe-meta .recipe-link:hover,.recipe-meta .recipe-link:focus-visible{background:#d8e8d3;color:#24482c;outline:3px solid #edf4ea;outline-offset:2px}
 .recipe-meta .recipe-link:active{transform:translateY(1px);box-shadow:0 1px 0 #23452a}
 @media(max-width:560px){.recipe-meta{gap:7px}.recipe-meta .recipe-link{font-size:11px;padding:9px 10px;min-height:38px}}
+
+.menu-toggle{display:none;border:1px solid #d7dfd1;background:#fff;border-radius:10px;width:42px;height:40px;padding:9px;cursor:pointer;align-items:center;justify-content:center;flex-direction:column;gap:5px}.menu-toggle span{display:block;width:20px;height:2px;background:#315b37;border-radius:2px}.topbar nav{align-items:center}
+@media(max-width:640px){.topbar{gap:10px}.menu-toggle{display:flex;margin-left:auto}.topbar nav{display:none;position:absolute;top:66px;left:14px;right:14px;background:#fffefa;border:1px solid #e5e9df;border-radius:14px;padding:12px;box-shadow:0 12px 28px #263d2b20;flex-direction:column;align-items:stretch;gap:0}.topbar nav.open{display:flex}.topbar nav a{padding:13px 12px;border-radius:8px}.topbar nav a:hover{background:#edf3e9}.lang-btn{padding:8px 10px;white-space:nowrap}}
