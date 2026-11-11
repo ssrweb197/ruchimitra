@@ -81,3 +81,8 @@
 .review-item small{color:#8b9288;font-weight:400}
 .review-item p,.review-empty{margin:6px 0 0;color:#667164;font-size:11px;line-height:1.6;overflow-wrap:anywhere}
 .review-local-note{font-size:9px;line-height:1.5;color:#92988e;margin:9px 0 0}
+
+/* Favourite recipes */
+.recipe-meta .favourite-btn{width:34px;height:34px;flex:0 0 34px;padding:0;border:1px solid #eadfd8;border-radius:9px;background:#fff8f5;color:#a65c4a;font-size:19px;line-height:1;cursor:pointer}
+.recipe-meta .favourite-btn.saved{background:#fbe8e4;border-color:#eac5bc;color:#b33e32}
+.recipe-meta .favourite-btn:focus-visible{outline:3px solid #f3d8d1;outline-offset:2px}
