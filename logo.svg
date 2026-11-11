@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+<rect width="512" height="512" rx="112" fill="#fffefa"/>
+<circle cx="256" cy="256" r="239" fill="none" stroke="#145b2c" stroke-width="15"/>
+<g fill="none" stroke="#145b2c" stroke-width="15" stroke-linecap="round" stroke-linejoin="round">
+<path d="M214 151c-17-15-14-40 4-52 4-33 47-48 70-23 25-9 51 11 49 36 22 18 10 52-15 56"/>
+<path d="M231 160l-5 30h62l-6-30"/>
+</g>
+<path d="M76 199c-19-31 4-49 14-73 12 24 23 44 7 73M106 199c-13-23 3-37 10-55 10 19 14 37 3 55" fill="none" stroke="#ed641b" stroke-width="12" stroke-linecap="round"/>
+<path d="M54 215h92c-3 43-20 62-46 62s-43-19-46-62z" fill="#145b2c"/>
+<path d="M62 217h76" stroke="#fffefa" stroke-width="7" stroke-linecap="round"/>
+<text x="164" y="277" font-family="Arial,sans-serif" font-size="172" font-weight="800" fill="#145b2c">R</text>
+<text x="285" y="277" font-family="Arial,sans-serif" font-size="172" font-weight="800" fill="#a71919">M</text>
+<path d="M126 310Q256 276 386 310" fill="none" stroke="#145b2c" stroke-width="8" stroke-linecap="round"/>
+<text x="256" y="370" text-anchor="middle" font-family="Arial,sans-serif" font-size="57" font-weight="800">
+<tspan fill="#145b2c">Ruchi</tspan><tspan fill="#a71919">Mitra</tspan>
+</text>
+<path d="M91 397h42m246 0h42" stroke="#ed641b" stroke-width="8" stroke-linecap="round"/>
+<text x="256" y="414" text-anchor="middle" font-family="Arial,sans-serif" font-size="19" font-style="italic" font-weight="700" fill="#145b2c">Every Recipe. Right Quantity.</text>
+</svg>
