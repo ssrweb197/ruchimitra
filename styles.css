@@ -49,3 +49,18 @@
 .tips-note{max-width:900px;margin:20px auto 0;padding:13px 16px;border-radius:10px;background:#e8eddf;color:#64715e;font-size:11px;line-height:1.7}
 @media(max-width:900px){.kitchen-tips{padding:60px 5vw}}
 @media(max-width:640px){.kitchen-tips{padding:52px 19px}.tips-grid{grid-template-columns:1fr;gap:11px}.tip-card{padding:18px}.tip-card h3{font-size:15px}.tip-card li{font-size:11px}}
+
+/* Search-friendly cooking guide articles */
+.cooking-guides{padding:76px 7vw;background:#fffefa}
+.cooking-guides .section-head{margin-bottom:28px}
+.guide-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.guide-card{border:1px solid var(--line);border-radius:14px;background:#fff;padding:22px}
+.guide-card>span{font-size:10px;font-weight:800;letter-spacing:.7px;color:#7b8c69;text-transform:uppercase}
+.guide-card h3{font-size:17px;line-height:1.4;margin:12px 0 8px;color:#2d4932}
+.guide-card p,.guide-card details div{font-size:12px;line-height:1.8;color:#6e786d}
+.guide-card p{margin:0 0 12px}
+.guide-card details{border-top:1px solid #eeeee7;padding-top:11px}
+.guide-card summary{cursor:pointer;color:#315b37;font-size:11px;font-weight:800}
+.guide-card details div{padding-top:10px}
+@media(max-width:900px){.cooking-guides{padding:60px 5vw}}
+@media(max-width:640px){.cooking-guides{padding:52px 19px}.guide-grid{grid-template-columns:1fr;gap:11px}.guide-card{padding:18px}.guide-card h3{font-size:15px}}
