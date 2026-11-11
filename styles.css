@@ -64,3 +64,20 @@
 .guide-card details div{padding-top:10px}
 @media(max-width:900px){.cooking-guides{padding:60px 5vw}}
 @media(max-width:640px){.cooking-guides{padding:52px 19px}.guide-grid{grid-template-columns:1fr;gap:11px}.guide-card{padding:18px}.guide-card h3{font-size:15px}}
+
+/* Recipe ratings and local reviews */
+.review-summary{margin-top:10px;color:#9a7134;font-size:11px;font-weight:800}
+.recipe-reviews{margin-top:9px;border-top:1px solid #f0eee8;padding-top:9px}
+.recipe-reviews>summary{cursor:pointer;color:#315b37;font-size:11px;font-weight:800}
+.review-form{display:grid;gap:9px;padding:12px 0}
+.review-form label{display:grid;gap:5px;color:#687465;font-size:10px;font-weight:700}
+.review-form input,.review-form select,.review-form textarea{width:100%;border:1px solid var(--line);border-radius:7px;padding:9px;font:12px "DM Sans","Noto Sans Telugu",sans-serif;color:var(--ink);background:#fff}
+.review-form textarea{resize:vertical}
+.review-form .btn{justify-self:start;padding:10px 13px;font-size:11px}
+.review-list{display:grid;gap:8px}
+.review-item{padding:9px;background:#f8f8f2;border-radius:8px}
+.review-item>div{display:flex;justify-content:space-between;gap:8px;font-size:10px}
+.review-item>div span{color:#a4772d;white-space:nowrap}
+.review-item small{color:#8b9288;font-weight:400}
+.review-item p,.review-empty{margin:6px 0 0;color:#667164;font-size:11px;line-height:1.6;overflow-wrap:anywhere}
+.review-local-note{font-size:9px;line-height:1.5;color:#92988e;margin:9px 0 0}
