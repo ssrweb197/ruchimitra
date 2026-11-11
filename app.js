@@ -30,6 +30,50 @@ function renderCalc(){const factor=target/selected.base;const servingMode=select
 function populateSelect(){$("calcRecipe").innerHTML=recipes.map(r=>'<option value="'+r.id+'">'+(language==="te"?r.te:r.name)+'</option>').join("");$("calcRecipe").value=selected.id;$("calcRecipe").onchange=()=>{selected=recipes.find(r=>r.id===$("calcRecipe").value);target=selected.base;renderCalc()};renderCalc()}
 $("searchInput").addEventListener("input",renderRecipes);
 const menuToggle=$("menuToggle"),siteNav=$("siteNav");if(menuToggle&&siteNav){menuToggle.addEventListener("click",()=>{const open=siteNav.classList.toggle("open");menuToggle.setAttribute("aria-expanded",String(open));menuToggle.setAttribute("aria-label",open?"Close menu":"Open menu")});siteNav.querySelectorAll("a").forEach(a=>a.addEventListener("click",()=>{siteNav.classList.remove("open");menuToggle.setAttribute("aria-expanded","false");menuToggle.setAttribute("aria-label","Open menu")}));}
-$("langToggle").onclick=()=>{language=language==="en"?"te":"en";$("langToggle").textContent=language==="en"?"తెలుగు":"English";document.querySelectorAll("[data-en]").forEach(el=>{el.innerHTML=el.dataset[language]});$("searchInput").placeholder=uiText("Search podi, chutney...","పొడి, పచ్చడి వెతకండి...");$("searchInput").setAttribute("aria-label",uiText("Search recipes","వంటకాలు వెతకండి"));$("emptyState").textContent=uiText("No recipes found. Try another search.","వంటకాలు కనిపించలేదు. మరో పదంతో వెతకండి.");populateSelect();renderFilters();renderRecipes()};
+$("langToggle").onclick=()=>{language=language==="en"?"te":"en";$("langToggle").textContent=language==="en"?"తెలుగు":"English";document.querySelectorAll("[data-en]").forEach(el=>{el.innerHTML=el.dataset[language]});$("searchInput").placeholder=uiText("Search podi, chutney...","పొడి, పచ్చడి వెతకండి...");$("searchInput").setAttribute("aria-label",uiText("Search recipes","వంటకాలు వెతకండి"));$("emptyState").textContent=uiText("No recipes found. Try another search.","వంటకాలు కనిపించలేదు. మరో పదంతో వెతకండి.");populateSelect();renderFilters();renderRecipes();renderCostCalculator()};
 $("copyIngredients").onclick=async()=>{const text=(language==="te"?selected.te:selected.name)+" – "+$("targetLabel").textContent+"\n"+selected.ingredients.map(([n,a,u])=>ingName(n)+": "+fmt(a*target/selected.base,u).replace(u,unitName(u))).join("\n");try{await navigator.clipboard.writeText(text);$("copyIngredients").textContent=uiText("Copied!","కాపీ అయ్యింది!");setTimeout(()=>$("copyIngredients").textContent=uiText("Copy ingredients","పదార్థాలను కాపీ చేయండి"),1600)}catch(e){window.prompt(uiText("Copy ingredients","పదార్థాలను కాపీ చేయండి"),text)}};
-$("printRecipe").onclick=()=>window.print();$("year").textContent=new Date().getFullYear();populateSelect();renderFilters();renderRecipes();
+$("printRecipe").onclick=()=>window.print();$("year").textContent=new Date().getFullYear();populateSelect();renderFilters();renderRecipes();renderCostCalculator();
+
+// Recipe cost calculator: prices are stored locally in this browser only.
+const COST_PRICE_KEY = "ruchimitra-ingredient-prices-v1";
+let costRecipe = recipes[0];
+function readCostPrices(){try{return JSON.parse(localStorage.getItem(COST_PRICE_KEY)||"{}")}catch(e){return {}}}
+function writeCostPrices(prices){try{localStorage.setItem(COST_PRICE_KEY,JSON.stringify(prices))}catch(e){}}
+function costUnitText(unit){const labels={g:uiText("per g","ప్రతి గ్రా"),ml:uiText("per ml","ప్రతి మి.లీ"),pcs:uiText("per piece","ఒక్కింటికి"),cloves:uiText("per clove","ప్రతి రెబ్బ")};return labels[unit]||unit}
+function renderCostCalculator(){
+  const select=$("costRecipe");if(!select)return;
+  select.innerHTML=recipes.map(r=>'<option value="'+r.id+'">'+(language==="te"?r.te:r.name)+'</option>').join("");
+  select.value=costRecipe.id;
+  select.onchange=()=>{costRecipe=recipes.find(r=>r.id===select.value)||recipes[0];renderCostCalculator()};
+  const multiplier=$("costMultiplier");
+  if(multiplier){multiplier.onchange=calculateRecipeCost}
+  const prices=readCostPrices();
+  $("costIngredientList").innerHTML=costRecipe.ingredients.map(([name,amount,unit])=>{
+    const value=prices[name+"|"+unit]??"";
+    return '<label class="cost-ingredient-row"><span><b>'+esc(ingName(name))+'</b><small>'+fmt(amount,unit).replace(unit,unitName(unit))+' · '+costUnitText(unit)+'</small></span><span class="cost-input-wrap"><span>₹</span><input type="number" min="0" step="0.01" inputmode="decimal" placeholder="0.00" aria-label="'+esc(ingName(name))+' '+costUnitText(unit)+'" data-cost-name="'+esc(name)+'" data-cost-unit="'+unit+'" value="'+esc(value)+'"></span></label>';
+  }).join("");
+  $("costIngredientList").querySelectorAll("input[data-cost-name]").forEach(input=>input.addEventListener("input",()=>{
+    const all=readCostPrices();all[input.dataset.costName+"|"+input.dataset.costUnit]=input.value;writeCostPrices(all);calculateRecipeCost();
+  }));
+  calculateRecipeCost();
+}
+function calculateRecipeCost(){
+  const multiplier=Number($("costMultiplier")?.value||1),prices=readCostPrices();
+  let total=0;
+  costRecipe.ingredients.forEach(([name,amount,unit])=>{
+    const price=Number(prices[name+"|"+unit]);
+    if(Number.isFinite(price)&&price>=0)total+=amount*multiplier*price;
+  });
+  $("costTotal").textContent="₹"+total.toFixed(2);
+  const isServing=costRecipe.unit==="servings";
+  const unitCost=isServing?total/(costRecipe.base*multiplier):total*100/(costRecipe.base*multiplier);
+  $("costUnitResult").textContent=isServing
+    ?uiText("Estimated cost per serving: ","ఒక్కో సర్వింగ్ అంచనా ఖర్చు: ")+"₹"+unitCost.toFixed(2)
+    :uiText("Estimated cost per 100 g: ","100 గ్రాములకు అంచనా ఖర్చు: ")+"₹"+unitCost.toFixed(2);
+}
+const clearCostButton=$("clearCostPrices");
+if(clearCostButton)clearCostButton.onclick=()=>{
+  try{localStorage.removeItem(COST_PRICE_KEY)}catch(e){}
+  renderCostCalculator();
+};
+renderCostCalculator();
