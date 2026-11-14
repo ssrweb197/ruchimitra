@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://ruchimitra.pages.dev/</loc></url>
-  <url><loc>https://ruchimitra.pages.dev/#recipes</loc></url>
-  <url><loc>https://ruchimitra.pages.dev/#calculator</loc></url>
   <url><loc>https://ruchimitra.pages.dev/recipes/classic-idli-podi.html</loc></url>
   <url><loc>https://ruchimitra.pages.dev/recipes/peanut-karam-podi.html</loc></url>
   <url><loc>https://ruchimitra.pages.dev/recipes/curry-leaves-podi.html</loc></url>
@@ -15,4 +13,7 @@
   <url><loc>https://ruchimitra.pages.dev/recipes/rasam-powder.html</loc></url>
   <url><loc>https://ruchimitra.pages.dev/recipes/andhra-avakaya-pickle.html</loc></url>
   <url><loc>https://ruchimitra.pages.dev/recipes/lemon-pickle.html</loc></url>
+  <url><loc>https://ruchimitra.pages.dev/about-us.html</loc></url>
+  <url><loc>https://ruchimitra.pages.dev/privacy-policy.html</loc></url>
+  <url><loc>https://ruchimitra.pages.dev/contact-us.html</loc></url>
 </urlset>
