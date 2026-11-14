@@ -86,3 +86,25 @@
 .recipe-meta .favourite-btn{width:34px;height:34px;flex:0 0 34px;padding:0;border:1px solid #eadfd8;border-radius:9px;background:#fff8f5;color:#a65c4a;font-size:19px;line-height:1;cursor:pointer}
 .recipe-meta .favourite-btn.saved{background:#fbe8e4;border-color:#eac5bc;color:#b33e32}
 .recipe-meta .favourite-btn:focus-visible{outline:3px solid #f3d8d1;outline-offset:2px}
+
+/* Compact, scrollable mobile navigation */
+@media(max-width:640px){
+  .topbar nav.open{
+    max-height:min(68vh,420px);
+    overflow-y:auto;
+    padding:7px;
+    gap:2px;
+    overscroll-behavior:contain;
+  }
+  .topbar nav a{
+    display:block;
+    padding:10px 12px;
+    min-height:40px;
+    line-height:1.35;
+    font-size:13px;
+  }
+  .topbar nav a:focus-visible,.menu-toggle:focus-visible,.lang-btn:focus-visible{
+    outline:3px solid #b9cba9;
+    outline-offset:2px;
+  }
+}
