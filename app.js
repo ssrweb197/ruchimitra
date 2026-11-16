@@ -64,7 +64,7 @@ function addRecipeToShoppingList(){
  const factor=target/selected.base;
  selected.ingredients.forEach(([name,amount,unit])=>{
   const scaled=fmt(amount*factor,unit).replace(unit,unitName(unit));
-  const entry={name:ingName(name),amount:scaled.replace(/\s*[^\d.].*$/,"").trim()||scaled,unit:unitName(unit),recipe:language==="te"?selected.te:selected.name,checked:false};
+  const entry={name:ingName(name),amount:scaled.replace(/\s*[^\d.].*$/,"").trim()||scaled,unit:unitName(unit)||unit,recipe:language==="te"?selected.te:selected.name,checked:false};
   const existing=shoppingItems.find(x=>x.name===entry.name&&x.unit===entry.unit&&x.recipe===entry.recipe&&x.amount===entry.amount);
   if(!existing)shoppingItems.push(entry);
  });
