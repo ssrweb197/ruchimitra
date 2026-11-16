@@ -61,12 +61,13 @@ function renderShoppingList(){
  host.querySelectorAll("[data-shop-remove]").forEach(button=>button.onclick=()=>{shoppingItems.splice(Number(button.dataset.shopRemove),1);saveShoppingList();renderShoppingList()});
 }
 function addManualShoppingItem(){
- const nameInput=$("manualShoppingName"),amountInput=$("manualShoppingAmount");
- if(!nameInput||!amountInput)return;
- const name=nameInput.value.trim(),amount=amountInput.value.trim();
+ const nameInput=$("manualShoppingName"),amountInput=$("manualShoppingAmount"),unitInput=$("manualShoppingUnit");
+ if(!nameInput||!amountInput||!unitInput)return;
+ const name=nameInput.value.trim(),amount=amountInput.value.trim(),unit=unitInput.value;
  if(!name){alert(uiText("Please enter an item name.","దయచేసి పదార్థం పేరు నమోదు చేయండి."));nameInput.focus();return;}
- shoppingItems.push({name,amount:amount||"1",unit:amount?"":uiText("item","వస్తువు"),recipe:uiText("Added manually","మాన్యువల్‌గా జోడించబడింది"),checked:false});
- saveShoppingList();renderShoppingList();nameInput.value="";amountInput.value="";nameInput.focus();
+ const cleanAmount=amount||"1";
+ shoppingItems.push({name,amount:cleanAmount,unit,recipe:uiText("Added manually","మాన్యువల్‌గా జోడించబడింది"),checked:false});
+ saveShoppingList();renderShoppingList();nameInput.value="";amountInput.value="";unitInput.value="kg";nameInput.focus();
 }
 const manualAddButton=$("manualShoppingAdd");
 if(manualAddButton)manualAddButton.onclick=addManualShoppingItem;
