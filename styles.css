@@ -129,3 +129,21 @@
 .shopping-actions .btn{font-size:11px}
 @media(max-width:640px){.shopping-section{grid-template-columns:1fr;padding:52px 19px;gap:18px}.shopping-card{padding:16px}.shopping-actions{display:grid;grid-template-columns:1fr}.calc-actions{display:flex;flex-wrap:wrap}.calc-actions .btn{flex:1 1 140px}}
 @media print{.shopping-section,.cost-section,.topbar,.trust-row,footer,.hero-actions,.recipe-meta,.review-form,.favourite-btn{display:none!important}}
+
+
+/* Shopping list: clear, high-contrast manual entry controls */
+.shopping-section{color:#202820}
+.shopping-intro p{color:#596657}
+.shopping-head span{color:#596657}
+.shopping-empty{color:#596657;background:#f2f5ed}
+.shopping-card .small-note{color:#687466;font-size:11px}
+.manual-shopping-add{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(72px,.65fr) minmax(88px,.75fr) auto;gap:9px;margin:16px 0;align-items:stretch}
+.manual-shopping-add input,.manual-shopping-add select{width:100%;min-width:0;min-height:48px;padding:11px 12px;border:1px solid #cbd5c6;border-radius:10px;background:#fff;color:#202820;font:500 14px "DM Sans","Noto Sans Telugu",sans-serif;outline:none}
+.manual-shopping-add input::placeholder{color:#687466;opacity:1}
+.manual-shopping-add input:focus,.manual-shopping-add select:focus{border-color:#47784b;box-shadow:0 0 0 3px #e5eee1}
+.manual-shopping-add select{appearance:auto;cursor:pointer}
+.manual-shopping-add .btn{min-height:48px;padding:11px 16px;font-size:13px;white-space:nowrap;border-color:#b9cbb2;color:#244b2b;font-weight:700}
+.shopping-row b{color:#202820}
+.shopping-row small{color:#596657}
+.shopping-actions .btn{min-height:46px;font-size:12px}
+@media(max-width:640px){.manual-shopping-add{grid-template-columns:minmax(0,1fr) minmax(76px,.55fr);gap:8px}.manual-shopping-add select{grid-column:1/2}.manual-shopping-add .btn{grid-column:2/3;grid-row:2;white-space:normal;padding:10px 8px}.shopping-head{font-size:14px}.shopping-head span{font-size:12px}}
