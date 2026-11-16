@@ -147,3 +147,6 @@
 .shopping-row small{color:#596657}
 .shopping-actions .btn{min-height:46px;font-size:12px}
 @media(max-width:640px){.manual-shopping-add{grid-template-columns:minmax(0,1fr) minmax(76px,.55fr);gap:8px}.manual-shopping-add select{grid-column:1/2}.manual-shopping-add .btn{grid-column:2/3;grid-row:2;white-space:normal;padding:10px 8px}.shopping-head{font-size:14px}.shopping-head span{font-size:12px}}
+
+/* Multilingual translation selector */
+.translate-widget{max-width:125px;min-width:105px;overflow:hidden;font:600 11px "DM Sans",sans-serif}.translate-widget .goog-te-gadget{font-size:0!important;color:transparent!important}.translate-widget .goog-te-gadget select{max-width:125px;height:36px;padding:6px 8px;border:1px solid #d7dfd1;border-radius:9px;background:#fffefa;color:#315b37;font:600 11px "DM Sans",sans-serif}.goog-te-banner-frame,.skiptranslate iframe{display:none!important}body{top:0!important}@media(max-width:640px){.translate-widget{max-width:100px;min-width:90px}.translate-widget .goog-te-gadget select{max-width:100px;font-size:10px}}
