@@ -60,6 +60,20 @@ function renderShoppingList(){
  host.querySelectorAll("[data-shop-check]").forEach(input=>input.onchange=()=>{shoppingItems[Number(input.dataset.shopCheck)].checked=input.checked;saveShoppingList();renderShoppingList()});
  host.querySelectorAll("[data-shop-remove]").forEach(button=>button.onclick=()=>{shoppingItems.splice(Number(button.dataset.shopRemove),1);saveShoppingList();renderShoppingList()});
 }
+function addManualShoppingItem(){
+ const nameInput=$("manualShoppingName"),amountInput=$("manualShoppingAmount");
+ if(!nameInput||!amountInput)return;
+ const name=nameInput.value.trim(),amount=amountInput.value.trim();
+ if(!name){alert(uiText("Please enter an item name.","దయచేసి పదార్థం పేరు నమోదు చేయండి."));nameInput.focus();return;}
+ shoppingItems.push({name,amount:amount||"1",unit:amount?"":uiText("item","వస్తువు"),recipe:uiText("Added manually","మాన్యువల్‌గా జోడించబడింది"),checked:false});
+ saveShoppingList();renderShoppingList();nameInput.value="";amountInput.value="";nameInput.focus();
+}
+const manualAddButton=$("manualShoppingAdd");
+if(manualAddButton)manualAddButton.onclick=addManualShoppingItem;
+const manualNameInput=$("manualShoppingName");
+if(manualNameInput)manualNameInput.addEventListener("keydown",e=>{if(e.key==="Enter"){e.preventDefault();addManualShoppingItem()}});
+const manualAmountInput=$("manualShoppingAmount");
+if(manualAmountInput)manualAmountInput.addEventListener("keydown",e=>{if(e.key==="Enter"){e.preventDefault();addManualShoppingItem()}});
 function addRecipeToShoppingList(){
  const factor=target/selected.base;
  selected.ingredients.forEach(([name,amount,unit])=>{
