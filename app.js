@@ -90,7 +90,7 @@ $("addShoppingIngredients").onclick=addRecipeToShoppingList;
 $("clearShoppingList").onclick=()=>{if(!shoppingItems.length)return;if(!confirm(uiText("Clear your shopping list?","షాపింగ్ జాబితాను ఖాళీ చేయాలా?")))return;shoppingItems=[];saveShoppingList();renderShoppingList()};
 $("copyShoppingList").onclick=async()=>{
  if(!shoppingItems.length){alert(uiText("Your shopping list is empty.","మీ షాపింగ్ జాబితా ఖాళీగా ఉంది."));return}
- const text=uiText("RuchiMitra Shopping List","రుచిమిత్ర షాపింగ్ జాబితా")+"\n"+shoppingItems.map(x=>(x.checked?"[x] ":"[ ] ")+x.name+" — "+x.amount+" "+x.unit+" ("+x.recipe+")").join("\n");
+ const text=uiText("RuchiMitra Shopping List","రుచిమిత్ర షాపింగ్ జాబితా")+"\n\n"+shoppingItems.map(x=>(x.checked?"[x] ":"[ ] ")+x.name+" — "+[x.amount,x.unit].filter(Boolean).join(" ")).join("\n");
  try{await navigator.clipboard.writeText(text);$("copyShoppingList").textContent=uiText("Copied!","కాపీ అయ్యింది!");setTimeout(()=>{$("copyShoppingList").textContent=uiText("Copy list for WhatsApp","వాట్సాప్ కోసం జాబితా కాపీ చేయండి")},1600)}
  catch(e){window.prompt(uiText("Copy your shopping list","మీ షాపింగ్ జాబితాను కాపీ చేయండి"),text)}
 };
