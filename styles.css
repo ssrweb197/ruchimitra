@@ -231,3 +231,37 @@
   .guide-card details{padding-top:14px}
   .guide-card summary{font-size:15px;line-height:1.5}
 }
+
+
+/* Mobile readability for Shopping List and Recipe Cost planner */
+@media(max-width:640px){
+  .shopping-section{padding:58px 19px;gap:22px}
+  .shopping-intro .eyebrow,.cost-intro .eyebrow{font-size:13px;letter-spacing:1.1px;line-height:1.5}
+  .shopping-intro h2,.cost-intro h2{font-size:32px;line-height:1.25;letter-spacing:-.6px}
+  .shopping-intro p,.cost-intro>p{font-size:16px;line-height:1.8}
+  .shopping-card{padding:20px 17px}
+  .shopping-head{font-size:16px;line-height:1.5}
+  .shopping-head span{font-size:14px}
+  .manual-shopping-add input,.manual-shopping-add select{font-size:16px;min-height:54px;padding:12px 14px}
+  .manual-shopping-add .btn{font-size:15px;min-height:54px}
+  .shopping-empty{font-size:15px;line-height:1.65;padding:19px}
+  .shopping-row b{font-size:15px}
+  .shopping-row small{font-size:13px;line-height:1.5}
+  .shopping-row input{width:21px;height:21px}
+  .shopping-row>button{width:36px;height:36px}
+  .shopping-actions .btn{font-size:15px;min-height:54px}
+  .shopping-card .small-note{font-size:13px;line-height:1.7}
+  .cost-section{padding:58px 19px}
+  .cost-card{padding:19px 17px}
+  .cost-controls label{font-size:14px}
+  .cost-controls select{font-size:16px;min-height:50px}
+  .cost-table-head{font-size:14px}
+  .cost-table-head span{font-size:13px;line-height:1.5}
+  .cost-ingredient-row b{font-size:14px}
+  .cost-ingredient-row small{font-size:12px;line-height:1.5}
+  .cost-input-wrap{min-height:44px}
+  .cost-input-wrap input{font-size:16px}
+  .cost-result span,.cost-result small{font-size:14px;line-height:1.6}
+  .cost-result strong{font-size:32px}
+  .cost-actions .btn{font-size:14px;min-height:48px}
+}
