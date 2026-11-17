@@ -191,3 +191,17 @@
   .guide-card summary,.feature-link{font-size:13px}
   footer p,footer a{font-size:12px}
 }
+
+
+/* Extra mobile readability for Kitchen Tips and long-form guidance */
+@media(max-width:640px){
+  .kitchen-tips .section-head .eyebrow{font-size:13px;letter-spacing:1.2px}
+  .kitchen-tips .section-head h2{font-size:34px;line-height:1.2}
+  .kitchen-tips .section-head p{font-size:16px;line-height:1.75}
+  .tip-card{padding:22px 20px}
+  .tip-icon{font-size:30px}
+  .tip-card h3{font-size:20px;line-height:1.35;margin:13px 0 16px}
+  .tip-card ul{padding-left:22px}
+  .tip-card li{font-size:16px;line-height:1.8;margin:10px 0}
+  .tips-note{font-size:14px;line-height:1.8;padding:16px 18px}
+}
