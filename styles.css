@@ -265,3 +265,34 @@
   .cost-result strong{font-size:32px}
   .cost-actions .btn{font-size:14px;min-height:48px}
 }
+
+
+/* Compact, expandable Kitchen Tips cards */
+.kitchen-tips{padding:54px 7vw;background:linear-gradient(180deg,#f5f6ef 0%,#f9f8f1 100%)}
+.kitchen-tips .section-head{margin-bottom:24px}
+.tips-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.tip-card{padding:19px 20px;border-radius:16px;box-shadow:0 5px 18px #283e2508;transition:transform .18s ease,box-shadow .18s ease}
+.tip-card:hover{transform:translateY(-2px);box-shadow:0 10px 24px #283e2510}
+.tip-icon{display:inline-grid;place-items:center;width:42px;height:42px;border-radius:13px;background:#edf3e8;font-size:23px}
+.tip-card h3{font-size:17px;margin:10px 0 8px}
+.tip-details{border-top:1px solid #edf0e8;padding-top:9px}
+.tip-details summary{cursor:pointer;list-style:none;display:flex;align-items:center;justify-content:space-between;gap:10px;color:#315b37;font-size:12px;font-weight:800;padding:7px 0}
+.tip-details summary::-webkit-details-marker{display:none}
+.tip-details summary:after{content:"+";display:grid;place-items:center;width:24px;height:24px;border-radius:50%;background:#edf3e8;font-size:17px;line-height:1}
+.tip-details[open] summary:after{content:"−"}
+.tip-details ul{margin:5px 0 0;padding-left:18px}
+.tip-details li{font-size:12px;line-height:1.65;color:#687366;margin:7px 0}
+.tips-note{margin:16px auto 0;padding:12px 15px;font-size:11px;line-height:1.65;border-radius:12px}
+@media(max-width:640px){
+ .kitchen-tips{padding:38px 19px}
+ .kitchen-tips .section-head{margin-bottom:18px}
+ .kitchen-tips .section-head h2{font-size:29px;line-height:1.2}
+ .kitchen-tips .section-head p{font-size:14px;line-height:1.55}
+ .tips-grid{grid-template-columns:1fr;gap:10px}
+ .tip-card{padding:15px 16px;border-radius:14px}
+ .tip-icon{width:36px;height:36px;font-size:20px;border-radius:11px}
+ .tip-card h3{font-size:16px;margin:8px 0}
+ .tip-details summary{font-size:13px;padding:8px 0}
+ .tip-details li{font-size:13px;line-height:1.6;margin:6px 0}
+ .tips-note{font-size:12px;line-height:1.6;padding:12px 14px}
+}
