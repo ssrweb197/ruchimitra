@@ -30,7 +30,7 @@
     ["Vegetable poha","Curd rice with vegetable stir-fry","Moong dal khichdi"],
     ["Upma with sambar","Vegetable pulao with raita","Rasam, rice and beans poriyal"],
     ["Ragi dosa with chutney","Chana curry with rice","Idli with sambar"],
-    [" pesarattu or dosa with chutney","Seasonal vegetable sambar with rice","Chapati with dal"]
+    ["Pesarattu or dosa with chutney","Seasonal vegetable sambar with rice","Chapati with dal"]
   ];
   const challenges=[
     ["Try one seasonal vegetable","Include one locally available seasonal vegetable in a meal today."],
