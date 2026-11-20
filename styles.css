@@ -335,3 +335,10 @@
  .about h2{font-size:26px}
  .about p{font-size:13px;line-height:1.7}
 }
+
+/* Slow, continuous rotation of the hero spice photograph */
+.hero-photo-frame{width:100%;height:390px;overflow:hidden;border-radius:48% 48% 20px 20px;box-shadow:0 22px 50px #5e503022;position:relative}
+.hero-photo-frame>img{display:block;width:100%;height:100%;object-fit:cover;border-radius:0;box-shadow:none;transform:scale(1.28);transform-origin:center;animation:spice-photo-full-rotation 40s linear infinite}
+@keyframes spice-photo-full-rotation{from{transform:scale(1.28) rotate(0deg)}to{transform:scale(1.28) rotate(360deg)}}
+@media(max-width:640px){.hero-photo-frame{height:390px}}
+@media(prefers-reduced-motion:reduce){.hero-photo-frame>img{animation:none;transform:scale(1.12)}}
